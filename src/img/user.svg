@@ -1,0 +1,8 @@
+<svg fill="url(#gradient)" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="48px" height="48px"><path d="M20,15c0,0.55-0.22,1.05-0.59,1.41C19.05,16.78,18.55,17,18,17v6h-7l-0.1-0.5H11c1.66,0,3-1.34,3-3v-1c0-1.66-1.34-3-3-3 H9.5l-0.41-2.07C9.24,13.3,9.38,13.16,9.5,13c0.46,0.61,1.18,1,2,1c1.38,0,2.5-1.12,2.5-2.5S12.88,9,11.5,9 c-0.82,0-1.55,0.4-2,1.01C9.05,9.4,8.32,9,7.5,9C6.94,9,6.41,9.19,6,9.5V8c0-4,3-6,6-6s6,2,6,6v5c0.55,0,1.05,0.22,1.41,0.59 C19.78,13.95,20,14.45,20,15z"/><line x1="5" x2="9" y1="15" y2="15" fill="none" stroke="url(#gradient)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="11" cy="11" r="1"/><circle cx="6" cy="11" r="1"/><circle cx="11.5" cy="11.5" r="3" fill="none" stroke="url(#gradient)" stroke-miterlimit="10"/><path fill="none" stroke="url(#gradient)" stroke-miterlimit="10" d="M9.501,13.736C8.97,14.211,8.269,14.5,7.5,14.5 c-1.657,0-3-1.343-3-3s1.343-3,3-3c0.769,0,1.47,0.289,2.001,0.764"/>
+    <defs>
+        <linearGradient id="gradient">
+            <stop offset="50%" style="stop-color: #4A569D"></stop>
+            <stop offset="70%" style="stop-color: #DC2424"></stop>
+        </linearGradient>
+    </defs>
+    <path fill="none" stroke="url(#gradient)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M11,19.5H5.5 c0,0,0-1,0-1c0-1.657,1.343-3,3-3H11c1.657,0,3,1.343,3,3v1c0,1.657-1.343,3-3,3H9.5c-1.657,0-3-1.343-3-3v0"/></svg>

@@ -1,0 +1,84 @@
+.headerWrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0 1rem 0.3rem;
+    max-width: 1920px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 5px rgba(148, 156, 160, 0.08);
+}
+
+.headerLogo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 3rem;
+    height: 3rem;
+    fill: #1d5fa1;
+    margin-left: 0.5rem;
+}
+
+.logoText {
+    font-weight: 600;
+    font-size: 2rem;
+    background: linear-gradient(to right, #DC2424 0%, #4A569D  51%, #DC2424  100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #0B2349;
+}
+
+.searchLogo {
+    width: 1rem;
+    height: 1rem;
+}
+
+.headerInput {
+    width: 25rem;
+    height: 2.5rem;
+    padding: 0.3rem;
+    background-color: #e1e5e8;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    margin-right: 20rem;
+}
+
+.searchLogo {
+    margin-right: 0.5rem;
+}
+
+.input {
+    background-color: #e1e5e8;
+    width: 100%;
+}
+
+.headerUser {
+    display: flex;
+    align-items: center;
+}
+
+.userLink {
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 0.4rem;
+    background-color: #fff;
+}
+
+.userLink:hover {
+    background-color: #f1f2fc;
+}
+
+.btnText{
+    color: #4A569D;
+    font-size: 1rem;
+}
+
+.userBtn {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+}
