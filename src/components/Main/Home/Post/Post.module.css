@@ -1,0 +1,44 @@
+.addPostPhoto {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.addPostPhoto img {
+    width: 50px;
+    height: 100px;
+}
+
+.userPost {
+    padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    border: 1px solid #d0cfcf;
+    border-top: 4px solid #DC2424;
+    flex-direction: column;
+}
+
+.userInfo {
+    display: flex;
+}
+
+.someUser {
+    margin-left: 1rem;
+    color: #3e4a97;
+    font-size: 1.2rem;
+}
+
+.time {
+    font-size: 1rem;
+    color: #d0cfcf;
+}
+
+.postText {
+    margin-top: 1rem;
+}
+
+.postText p:first-child {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}

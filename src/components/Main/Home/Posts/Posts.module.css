@@ -1,0 +1,81 @@
+.posts {
+    width: 100%;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.addPost {
+    padding: 0.5rem 1rem;
+    height: 100px;
+    border: 1px solid #d0cfcf;
+    border-top: 4px solid #DC2424;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addPostPhoto {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.addPostPhoto img {
+    width: 50px;
+    height: 100px;
+}
+
+.addNewPost {
+    background-image: linear-gradient(to right, #DC2424 0%, #4A569D 51%, #DC2424 100%);
+    padding: 0.3rem 1rem;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 0.3rem;
+    display: block;
+}
+
+.addNewPost:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+textarea {
+    background: #dbd9d9;
+    resize: none;
+    border-radius: 0.3rem;
+}
+
+.userPost {
+    padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    border: 1px solid #d0cfcf;
+    border-top: 4px solid #DC2424;
+    flex-direction: column;
+}
+.userInfo{
+    display: flex;
+}
+
+.someUser{
+    margin-left: 1rem;
+    color: #3e4a97;
+    font-size: 1.2rem;
+}
+.time {
+    font-size: 1rem;
+    color: #d0cfcf;
+}
+
+.postText{
+    margin-top: 1rem;
+}
+.postText p:first-child{
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
