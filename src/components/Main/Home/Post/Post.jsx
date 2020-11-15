@@ -16,7 +16,7 @@ const Post = (props) => {
                     </div>
                 </div>
                 <div className={classes.postText}>
-                    <p>{props.postlabel}</p>
+                    <p>{props.postLabel}</p>
                     <p>{props.postText}</p>
                 </div>
             </div>

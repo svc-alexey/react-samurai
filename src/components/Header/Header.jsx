@@ -2,7 +2,6 @@ import React from "react";
 import classes from './Header.module.css';
 import logo from '../../img/logo.svg';
 import searchLogo from '../../img/search.svg';
-import {MdMenu} from 'react-icons/md';
 import {Link} from "react-router-dom";
 import * as MdIcons from "react-icons/md";
 

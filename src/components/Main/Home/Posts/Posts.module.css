@@ -1,6 +1,6 @@
 .posts {
     width: 100%;
-    margin-left: 2rem;
+    margin: 0 18rem 0 2rem;
     display: flex;
     flex-direction: column;
 }
@@ -13,6 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #fff;
 }
 
 .addPostPhoto {
@@ -45,7 +46,7 @@
 }
 
 textarea {
-    background: #dbd9d9;
+    background-color: #f2f2f2;
     resize: none;
     border-radius: 0.3rem;
 }

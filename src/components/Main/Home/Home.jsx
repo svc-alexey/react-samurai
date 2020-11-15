@@ -1,9 +1,9 @@
 import React from "react";
 import classes from './Home.module.css';
 import photo from "../../../img/photo.jpg";
-import Posts from "./Posts/Posts";
+import PostsContainer from "./Posts/PostsContainer";
 
-const Home = () => {
+const Home = (props) => {
     return (
         <div className={classes.wrapper}>
             <div className={classes.userProfile}>
@@ -22,7 +22,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <Posts/>
+            <PostsContainer/>
         </div>
     )
 }
