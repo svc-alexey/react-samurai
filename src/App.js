@@ -1,14 +1,14 @@
 import React from 'react';
 import classes from './App.css';
-import Header from "./components/Header/Header";
 import {BrowserRouter as Router} from "react-router-dom";
 import Main from "./components/Main/Main";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 function App(props) {
     return (
         <Router>
             <div className={classes.appWrapper}>
-                <Header/>
+                <HeaderContainer/>
                 <Main/>
             </div>
         </Router>

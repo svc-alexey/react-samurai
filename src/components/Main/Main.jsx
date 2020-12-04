@@ -1,25 +1,29 @@
 import React from "react";
 import classes from './Main.module.css';
-import Home from "./Home/Home";
 import { Route } from "react-router-dom";
-import Friends from "./Friends/Friends";
 import MessagesContainer from "./Messages/MessagesContainer";
+import Newsfeed from './Newsfeed/Newsfeed'
+import FriendsContainer from "./Friends/FriendsContainer";
+import RouterProfileContainer from "./Profile/ProfileContainer";
 
 
 const Main = (props) => {
-    return (
-        <div className={classes.wrapper}>
-            <Route exact path={'/'}>
-                <Home/>
-            </Route>
-            <Route exact path={'/friends'}>
-                <Friends/>
-            </Route>
-            <Route path={'/messages'}>
-                <MessagesContainer/>
-            </Route>
-        </div>
-    )
+  return (
+    <div className={classes.wrapper}>
+      <Route exact path={'/profile/:userId'}>
+        <RouterProfileContainer />
+      </Route>
+      <Route path={'/friends'}>
+        <FriendsContainer />
+      </Route>
+      <Route path={'/messages'}>
+        <MessagesContainer />
+      </Route>
+      <Route exact path={'/newsfeed'}>
+        <Newsfeed />
+      </Route>
+    </div>
+  )
 }
 
 export default Main;

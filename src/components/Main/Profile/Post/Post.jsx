@@ -1,6 +1,6 @@
 import React from "react";
 import classes from './Post.module.css';
-import photo from "../../../../img/photo.jpg";
+import photo from "../../../../assets/img/photo.jpg";
 
 const Post = (props) => {
     return (
@@ -8,7 +8,7 @@ const Post = (props) => {
             <div className={classes.userPost}>
                 <div className={classes.userInfo}>
                     <div className={classes.addPostPhoto}>
-                        <img src={photo} alt="photo"/>
+                        <img src={photo} alt="photouser"/>
                     </div>
                     <div className={classes.someUser}>
                         <p>Alexey Shvecov</p>

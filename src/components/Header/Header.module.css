@@ -1,12 +1,14 @@
 .headerWrapper {
     width: 100%;
-    margin: 0 auto;
-    padding: 1rem 0 1rem 0.3rem;
-    max-width: 1920px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 5px 5px rgba(148, 156, 160, 0.08);
+}
+
+.container{
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 5px 5px rgba(148, 156, 160, 0.08);
+  padding: 0.3rem 9rem;
 }
 
 .headerLogo {
@@ -43,7 +45,6 @@
     display: flex;
     align-items: center;
     border-radius: 0.5rem;
-    margin-right: 20rem;
 }
 
 .searchLogo {

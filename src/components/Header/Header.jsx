@@ -1,32 +1,40 @@
 import React from "react";
 import classes from './Header.module.css';
-import logo from '../../img/logo.svg';
-import searchLogo from '../../img/search.svg';
+import logo from '../../assets/img/logo.svg';
+import searchLogo from '../../assets/img/search.svg';
 import {Link} from "react-router-dom";
 import * as MdIcons from "react-icons/md";
 
-const Header = () => {
+const Header = (props) => {
     return (
         <div className={classes.headerWrapper}>
-            <div className={classes.headerLogo}>
-                <img src={logo} alt="logo" className={classes.logo}/>
-                <div className={classes.logoText}>Social.net</div>
-            </div>
-            <div className={classes.headerInput}>
-                <img src={searchLogo} alt="searchLogo" className={classes.searchLogo}/>
-                <input type="text" className={classes.input}
-                       placeholder='Search for Friends, Videos and more...'/>
-            </div>
+            <div className={classes.container}>
+                <div className={classes.headerLogo}>
+                    <img src={logo} alt="logo" className={classes.logo}/>
+                    <div className={classes.logoText}>Social.net</div>
+                </div>
+                <div className={classes.headerInput}>
+                    <img src={searchLogo} alt="searchLogo" className={classes.searchLogo}/>
+                    <input type="text" className={classes.input}
+                           placeholder='Search for Friends, Videos and more...'/>
+                </div>
                 <ul className={classes.nav}>
-                    <li><Link>
+                    <li><Link to={'/'}>
                         <div className={classes.li}>
-                            Alexey Shvecov
+                            {props.isAuthorized ? props.login: "login"}
                         </div>
                     </Link></li>
-                    <li><Link exact to={'/'}>
+                    <li><Link to={'/profile/12806'}>
                         <div className={classes.li}>
-                            <MdIcons.MdHome size={32} color={'#4A569D'}/>
-                            <p>Home</p>
+                            <MdIcons.MdAccountCircle size={32} color={'#4A569D'}/>
+                            <p>Profile</p>
+                        </div>
+                    </Link>
+                    </li>
+                    <li><Link to={'/newsfeed'}>
+                        <div className={classes.li}>
+                            <MdIcons.MdPublic size={32} color={'#4A569D'}/>
+                            <p>Newsfeed</p>
                         </div>
                     </Link>
                     </li>
@@ -45,6 +53,7 @@ const Header = () => {
                     </Link>
                     </li>
                 </ul>
+            </div>
         </div>
     )
 }

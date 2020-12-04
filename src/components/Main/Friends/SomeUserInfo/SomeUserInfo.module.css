@@ -1,0 +1,52 @@
+.someUser {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #d0cfcf;
+}
+
+.someUserInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.someUserInfo div {
+    margin-top: 0.5rem;
+}
+
+.userPhoto img {
+    width: 3rem;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+}
+
+.followBtn {
+    background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%)
+}
+
+.followBtn {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+
+.followBtn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.followBtn:disabled {
+    background-image: linear-gradient(to right, #553139 0%, #da269e 51%, #553139 100%)
+}

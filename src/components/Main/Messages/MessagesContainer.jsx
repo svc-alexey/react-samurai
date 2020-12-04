@@ -1,8 +1,6 @@
-import React from "react";
 import Messages from "./Messages";
 import {sendNewMessage, updateMessage} from "../../../redux/reducers/messagesReducers";
 import {connect} from "react-redux";
-
 
 let mapStateToProps = (state) => {
     return {
@@ -11,15 +9,5 @@ let mapStateToProps = (state) => {
         messegesText: state.messagePage.messegesText
     }
 }
-let mapDispatchToProps = (dispatch) => {
-    return {
-        updateMessage: (body) => {
-            dispatch(updateMessage(body));
-        },
-        sendNewMessage: () => {
-            dispatch(sendNewMessage());
-        }
-    }
-}
-const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages);
+const MessagesContainer = connect(mapStateToProps, {updateMessage, sendNewMessage})(Messages);
 export default MessagesContainer;

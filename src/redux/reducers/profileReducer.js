@@ -1,16 +1,20 @@
+import {userApi} from "../../api/api";
+
 let SEND_POST = "SEND_POST";
 let UPDATE_NEW_POST_BODY = "UPDATE_NEW_POST_BODY";
+let SET_PROFILE_DATA = "SET_PROFILE_DATA";
 
 const initialState = {
     posts: [
         {id: 1, postLabel: 'First Post', postText: 'Hello its my first post'},
         {id: 2, postLabel: 'Second Post', postText: 'Yo-Yo-Yo'}
     ],
-    postBody: 'it'
+    postBody: 'it',
+    profileData: null
 }
 
 
-const postReducer = (state = initialState, action) =>  {
+const profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case UPDATE_NEW_POST_BODY:
@@ -28,6 +32,10 @@ const postReducer = (state = initialState, action) =>  {
                 posts: [...state.posts, newPost],
                 postBody: ''
             }
+        case SET_PROFILE_DATA:
+            return {
+                ...state, profileData: action.data
+            }
         default:
             return state;
     }
@@ -40,5 +48,12 @@ export const updatePostBody = (body) => {
         body: body
     }
 }
+export const setProfileData = (data) => ({type: SET_PROFILE_DATA, data});
 
-export default postReducer;
+export const setUserProfile = (userId) => (dispatch) => {
+    userApi.getUserProfile(userId).then(data => {
+        dispatch(setProfileData(data));
+    });
+}
+
+export default profileReducer;

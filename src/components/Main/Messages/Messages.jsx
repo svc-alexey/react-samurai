@@ -1,12 +1,12 @@
 import React from "react";
 import classes from './Messages.module.css';
 import * as MdIcons from "react-icons/md";
-import userPhoto from "../../../img/userPhoto.png";
+import userPhoto from "../../../assets/img/userPhoto.png";
 import Message from "./Message/Message";
 
 
 const Messages = (props) => {
-    let messagesElements = props.messages.map(message => <Message id={message.id} name={message.name} text={message.text} />)
+    let messagesElements = props.messages.map(message => <Message key={message.id} id={message.id} name={message.name} text={message.text} />)
 
     let messegesText = props.messegesText.map( text => <div className={classes.textMessage}>{text.usersTextMessages}</div> )
 
@@ -50,7 +50,7 @@ const Messages = (props) => {
                     <div className={classes.chatInput}>
                         <div className={classes.inputItems}>
                             <textarea onChange={onMessageUpdate} value={props.messageBody} ref={messagesBody} cols="55" rows="3"/>
-                            <button onClick={sendMessage} >Send</button>
+                            <button className={classes.sendMessage} onClick={sendMessage} >Send</button>
                         </div>
                         <div className={classes.chatIcons}>
                             <MdIcons.MdSentimentSatisfied size={24} color={'#4A569D'}/>

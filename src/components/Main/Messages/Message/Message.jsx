@@ -1,7 +1,6 @@
 import React from "react";
 import classes from './Message.module.css';
-import * as MdIcons from "react-icons/md";
-import userPhoto from "../../../../img/userPhoto.png";
+import userPhoto from "../../../../assets/img/userPhoto.png";
 import {NavLink} from "react-router-dom";
 
 

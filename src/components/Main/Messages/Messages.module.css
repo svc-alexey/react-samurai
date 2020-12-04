@@ -115,7 +115,7 @@ textarea{
     margin-right: 1rem;
 }
 
-button {
+.sendMessage {
     background-image: linear-gradient(to right, #DC2424 0%, #4A569D 51%, #DC2424 100%);
     padding: 1px 2rem;
     text-align: center;
@@ -126,7 +126,7 @@ button {
     display: block;
 }
 
-button:hover {
+.sendMessage:hover {
     background-position: right center;
     color: #fff;
     text-decoration: none;
