@@ -1,0 +1,63 @@
+.wrap {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.loginForm {
+    width: 45rem;
+    height: 25rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d0cfcf;
+    box-shadow: 10px 10px 10px #bdd4cc;
+    border-radius: 0.5rem;
+    color: #314755;
+}
+
+.loginForm input {
+    height: 1.5rem;
+    margin: 0.3rem 0;
+}
+
+.loginForm h1 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+
+.loginForm label{
+    font-size: 1.5rem;
+}
+.checkbox{
+    display: flex;
+    align-items: center;
+    color: #6d6e71;
+}
+.checkbox input{
+    margin-right: 0.5rem;
+}
+
+
+.loginBtn {background-image: linear-gradient(to right, #1D976C 0%, #93F9B9  51%, #1D976C  100%)}
+.loginBtn {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+
+.loginBtn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}

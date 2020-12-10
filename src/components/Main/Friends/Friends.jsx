@@ -30,7 +30,7 @@ const Friends = (props) => {
                     <div className={classes.pageButtons}>
                         {pages.map(pages => {
                             return (
-                                <button key={pages.id} onClick={() => {
+                                <button key={pages} onClick={() => {
                                     props.setCurrentPage(pages)
                                 }}
                                         className={props.currentPage === pages ? classes.selectedPage : classes.pageBtn}>{pages}</button>

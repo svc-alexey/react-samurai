@@ -19,12 +19,12 @@ const Header = (props) => {
                            placeholder='Search for Friends, Videos and more...'/>
                 </div>
                 <ul className={classes.nav}>
-                    <li><Link to={'/'}>
+                    <li onClick={props.logout}><Link to={'/'}>
                         <div className={classes.li}>
-                            {props.isAuthorized ? props.login: "login"}
+                            {props.isAuthorized ? props.login : "login"}
                         </div>
                     </Link></li>
-                    <li><Link to={'/profile/12806'}>
+                    <li><Link to={`/profile/${props.id}`}>
                         <div className={classes.li}>
                             <MdIcons.MdAccountCircle size={32} color={'#4A569D'}/>
                             <p>Profile</p>

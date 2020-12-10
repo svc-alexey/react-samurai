@@ -26,11 +26,21 @@ export const userApi = {
             return response.data;
         })
     },
+}
 
+export const profileApi = {
     getUserProfile(id) {
         return instance.get(`profile/${id}`).then(response => {
             return response.data;
         })
+    },
+    getUserProfileStatus(id) {
+        return instance.get(`profile/status/${id}`).then(response => {
+            return response.data;
+        })
+    },
+    updateUserProfileStatus(status) {
+        return instance.put(`profile/status`, {status})
     }
 }
 
@@ -39,5 +49,13 @@ export const authAPI = {
         return instance.get(`auth/me`).then(response => {
             return response.data;
         })
+    },
+    login(email, password, rememberMe = false) {
+        return instance.post(`auth/login`, {email, password, rememberMe}).then(response => {
+            return response.data;
+        })
+    },
+    logout(email, password, rememberMe = false) {
+        return instance.delete(`auth/login`);
     }
 }

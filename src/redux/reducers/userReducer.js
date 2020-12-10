@@ -59,7 +59,7 @@ const userReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFollowing: action.isFollowing ? [...state.isFollowing, action.userId]
-                    : state.isFollowing.filter(id => id != action.userId),
+                    : state.isFollowing.filter(id => id !== action.userId),
             }
         default:
             return state;

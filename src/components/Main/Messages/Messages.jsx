@@ -3,20 +3,19 @@ import classes from './Messages.module.css';
 import * as MdIcons from "react-icons/md";
 import userPhoto from "../../../assets/img/userPhoto.png";
 import Message from "./Message/Message";
+import {Field, reduxForm} from "redux-form";
 
 
 const Messages = (props) => {
-    let messagesElements = props.messages.map(message => <Message key={message.id} id={message.id} name={message.name} text={message.text} />)
+    let messagesElements = props.messages.map(message => <Message key={message.id} id={message.id} name={message.name}
+                                                                  text={message.text}/>)
 
-    let messegesText = props.messegesText.map( text => <div className={classes.textMessage}>{text.usersTextMessages}</div> )
+    let messegesText = props.messegesText.map(text => <div
+        className={classes.textMessage}>{text.usersTextMessages}</div>)
 
-    let messagesBody = React.createRef();
-
-    let onMessageUpdate = () => {
-        props.updateMessage(messagesBody.current.value);
-    }
-    let sendMessage = () => {
-        props.sendNewMessage();
+    let sendMessage = (value) => {
+        debugger
+        props.sendNewMessage(value.newMessage);
     }
 
     return (
@@ -48,10 +47,7 @@ const Messages = (props) => {
                         {messegesText}
                     </div>
                     <div className={classes.chatInput}>
-                        <div className={classes.inputItems}>
-                            <textarea onChange={onMessageUpdate} value={props.messageBody} ref={messagesBody} cols="55" rows="3"/>
-                            <button className={classes.sendMessage} onClick={sendMessage} >Send</button>
-                        </div>
+                        <MessageForm onSubmit={sendMessage}/>
                         <div className={classes.chatIcons}>
                             <MdIcons.MdSentimentSatisfied size={24} color={'#4A569D'}/>
                             <MdIcons.MdCameraEnhance size={24} color={'#4A569D'}/>
@@ -62,5 +58,18 @@ const Messages = (props) => {
         </div>
     )
 }
+
+let MessageForm = (props) => {
+    return (
+        <form className={classes.inputItems} onSubmit={props.handleSubmit}>
+            <Field component={'textarea'} name={'newMessage'}/>
+            <button className={classes.sendMessage}>Send</button>
+        </form>
+    )
+}
+
+MessageForm = reduxForm({
+    form: 'addMessage'
+})(MessageForm);
 
 export default Messages;

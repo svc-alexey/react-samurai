@@ -89,10 +89,16 @@
     justify-content: space-between;
 }
 
-.profileLanding div {
-    margin-top: 1rem;
+.status{
+    display: flex;
+    margin-bottom: 0.5rem;
 }
-
+.status input{
+    background-color: #f2f2f2;
+}
+.status div{
+    border-bottom: 1px solid green;
+}
 h2 {
     margin-bottom: 1rem;
 }

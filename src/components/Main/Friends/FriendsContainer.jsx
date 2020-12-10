@@ -6,9 +6,10 @@ import {
 } from "../../../redux/reducers/userReducer";
 import Friends from "./Friends";
 import React from "react";
+import {withAuthRedirect} from "../../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 class FriendsContainer extends React.Component {
-
     componentDidMount() {
         this.props.getUsers(this.props.currentPage, this.props.usersCount);
     }
@@ -32,10 +33,8 @@ let mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, {
-    getUsers,
-    setCurrentPage,
-    follow,
-    unfollow,
-})(FriendsContainer);
+export default compose(
+    connect(mapStateToProps, {getUsers, setCurrentPage, follow, unfollow}),
+    withAuthRedirect
+)(FriendsContainer);
 

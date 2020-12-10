@@ -1,4 +1,3 @@
-let UPDATE_MESSAGE_BODY = 'UPDATE_MESSAGE_BODY';
 let SEND_NEW_MESSAGE = 'SEND_NEW_MESSAGE';
 
 
@@ -12,19 +11,15 @@ const initialState = {
         {usersTextMessages: 'dolor ipsul lorem'},
         {usersTextMessages: 'ipsum lorem dolor'},
     ],
-    messageBody: ''
 }
 
 export default function messagesReducer(state = initialState, action) {
-    switch (action.type){
-        case UPDATE_MESSAGE_BODY:
-            return{...state, messageBody: action.body};
+    switch (action.type) {
         case SEND_NEW_MESSAGE:
-            let newMessage = {usersTextMessages: state.messageBody};
+            let newMessage = {usersTextMessages: action.newMessage};
             return {
                 ...state,
                 messegesText: [...state.messegesText, newMessage],
-                messageBody: ''
             }
         default:
             return state;
@@ -33,5 +28,4 @@ export default function messagesReducer(state = initialState, action) {
 }
 
 
-export const updateMessage = (body) => ({type: UPDATE_MESSAGE_BODY, body:body});
-export const sendNewMessage = () => ({type:SEND_NEW_MESSAGE});
+export const sendNewMessage = (newMessage) => ({type: SEND_NEW_MESSAGE, newMessage});

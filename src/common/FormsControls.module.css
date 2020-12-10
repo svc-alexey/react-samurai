@@ -1,0 +1,19 @@
+.formControl {
+    display: flex;
+    flex-direction: column;
+}
+.error {
+    color: red;
+}
+
+.errorInput {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+}
+
+.noError{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #93F9B9;
+}
