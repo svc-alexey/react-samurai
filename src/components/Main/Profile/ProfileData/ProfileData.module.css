@@ -1,0 +1,11 @@
+.contact{
+    margin-top: 1rem;
+}
+
+.submitBtn{
+    padding: 0.5rem 0.9rem 0.2rem 0.5rem;
+    background-color: #cdddec;
+    color: #314755;
+    font-weight: 600;
+    margin-top: 1rem;
+}

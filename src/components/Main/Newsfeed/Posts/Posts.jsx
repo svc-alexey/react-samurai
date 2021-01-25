@@ -4,13 +4,12 @@ import photo from "../../../../assets/img/photo.jpg";
 import Post from "../Post/Post";
 import {Field, reduxForm} from "redux-form";
 import {MaxLength, required} from "../../../../utilities/validators/validators";
-import {Textarea} from "../../../../common/FormsContols";
+import {Textarea} from "../../../../common/Forms/FormsContols";
 
 const Posts = (props) => {
     let postElements = props.posts.map(post => <Post key={post.id} id={post.id} postLabel={post.postLabel}
                                                      postText={post.postText}/>);
     let sendPost = (value) => {
-        debugger
         props.sendPost(value.newPostText);
     }
     return (

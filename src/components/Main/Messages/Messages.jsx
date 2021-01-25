@@ -14,7 +14,6 @@ const Messages = (props) => {
         className={classes.textMessage}>{text.usersTextMessages}</div>)
 
     let sendMessage = (value) => {
-        debugger
         props.sendNewMessage(value.newMessage);
     }
 

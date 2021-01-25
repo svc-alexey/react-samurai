@@ -8,6 +8,12 @@ import Friends from "./Friends";
 import React from "react";
 import {withAuthRedirect} from "../../../hoc/withAuthRedirect";
 import {compose} from "redux";
+import {
+    currentPageSelector, isFetchingSelector, isFollowingSelector,
+    totalUsersCountSelector,
+    usersCountSelector,
+    usersSelector
+} from "../../../redux/selectors/friendsSelectors";
 
 class FriendsContainer extends React.Component {
     componentDidMount() {
@@ -24,12 +30,12 @@ class FriendsContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        users: state.usersPage.users,
-        totalUsersCount: state.usersPage.totalUsersCount,
-        usersCount: state.usersPage.usersCount,
-        currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching,
-        isFollowing: state.usersPage.isFollowing
+        users: usersSelector(state),
+        totalUsersCount: totalUsersCountSelector(state),
+        usersCount: usersCountSelector(state),
+        currentPage: currentPageSelector(state),
+        isFetching: isFetchingSelector(state),
+        isFollowing: isFollowingSelector(state)
     }
 };
 

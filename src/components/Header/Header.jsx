@@ -2,7 +2,7 @@ import React from "react";
 import classes from './Header.module.css';
 import logo from '../../assets/img/logo.svg';
 import searchLogo from '../../assets/img/search.svg';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import * as MdIcons from "react-icons/md";
 
 const Header = (props) => {
@@ -19,38 +19,43 @@ const Header = (props) => {
                            placeholder='Search for Friends, Videos and more...'/>
                 </div>
                 <ul className={classes.nav}>
-                    <li onClick={props.logout}><Link to={'/'}>
+                    <li><NavLink to={'/'}>
                         <div className={classes.li}>
                             {props.isAuthorized ? props.login : "login"}
                         </div>
-                    </Link></li>
-                    <li><Link to={`/profile/${props.id}`}>
+                    </NavLink></li>
+                    <li><NavLink to={`/profile`}>
                         <div className={classes.li}>
                             <MdIcons.MdAccountCircle size={32} color={'#4A569D'}/>
                             <p>Profile</p>
                         </div>
-                    </Link>
+                    </NavLink>
                     </li>
-                    <li><Link to={'/newsfeed'}>
+                    <li><NavLink to={'/newsfeed'}>
                         <div className={classes.li}>
                             <MdIcons.MdPublic size={32} color={'#4A569D'}/>
                             <p>Newsfeed</p>
                         </div>
-                    </Link>
+                    </NavLink>
                     </li>
-                    <li><Link to={'/friends'}>
+                    <li><NavLink to={'/friends'}>
                         <div className={classes.li}>
                             <MdIcons.MdPeople size={32} color={'#4A569D'}/>
                             <p>Friends</p>
                         </div>
-                    </Link>
+                    </NavLink>
                     </li>
-                    <li><Link to={'/messages'}>
+                    <li><NavLink to={'/messages'}>
                         <div className={classes.li}>
                             <MdIcons.MdMessage size={32} color={'#4A569D'}/>
                             <p>Messages</p>
                         </div>
-                    </Link>
+                    </NavLink>
+                    </li>
+                    <li>
+                        <button className={classes.li} onClick={props.logout}>
+                            <MdIcons.MdExitToApp size={32} color={'#4A569D'}/>
+                        </button>
                     </li>
                 </ul>
             </div>

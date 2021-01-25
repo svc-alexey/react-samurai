@@ -1,16 +1,17 @@
 import React from "react";
 import classes from './Profile.module.css';
 import background from "../../../assets/img/background.png";
-import userPhoto from "../../../assets/img/userPhoto.png";
 import * as FaIcons from 'react-icons/fa';
-import {NavLink} from "react-router-dom";
-import Preloader from "../../../common/Preloader";
+import ProfileBar from "./ProfileBar/ProfileBar";
+import ProfileData from "./ProfileData/ProfileData";
+import ProfileDataForm from "./ProfileData/ProfileDataForm";
 
 
 class Profile extends React.Component {
     state = {
         isEdit: false,
-        profileStatus: this.props.profileStatus
+        profileStatus: this.props.profileStatus,
+        editProfile: false
     }
 
     isEditShow = () => {
@@ -25,10 +26,37 @@ class Profile extends React.Component {
         this.props.updateUserProfileStatus(this.state.profileStatus)
     }
 
+    isEditProfileShow = () => {
+        this.setState({
+            editProfile: true
+        })
+    }
+
+    isEditProfileHide = () => {
+        this.setState({
+            editProfile: false,
+        })
+    }
+
     setProfileStatus = (e) => {
         this.setState({
             profileStatus: e.currentTarget.value,
         })
+    }
+
+    onPhotoSelected = (e) => {
+        if (e.target.files.length) {
+            this.props.savePhoto(e.target.files[0]);
+        }
+    }
+
+    submitProfileForm = (data) => {
+        this.props.submitProfileForm(data).then(
+            () => {
+                this.isEditProfileHide();
+
+            }
+        )
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -39,62 +67,32 @@ class Profile extends React.Component {
     }
 
     render() {
-
-        if (!this.props.profileData) {
-            return <Preloader/>
-        }
-
         return (
             <div className={classes.wrapper}>
                 <div className={classes.container}>
                     <div className={classes.dash}>
                         <img src={background} alt="background"/>
                     </div>
+                    <ProfileBar profileData={this.props.profileData} isOwner={this.props.isOwner}
+                                onPhotoSelected={this.onPhotoSelected}/>
                     <div className={classes.profileInfo}>
-                        <div className={classes.userBar}>
-                            <div className={classes.profilePhoto}>
-                                <img
-                                    src={this.props.profileData.photos.small ? this.props.profileData.photos.small : userPhoto}
-                                    alt="userPhoto"/>
-                            </div>
-                            <div className={classes.userName}>{this.props.profileData.fullName}</div>
-                            <div className={classes.userSocialNetworks}>
-                                <NavLink to={'/'}> <FaIcons.FaFacebookSquare size={24} color={'#314755'}/>
-                                </NavLink>
-                                <NavLink to={'/'}> <FaIcons.FaYoutube size={24} color={'#314755'}/>
-                                </NavLink>
-                                <NavLink to={'/'}> <FaIcons.FaTwitterSquare size={24} color={'#314755'}/>
-                                </NavLink>
-                                <NavLink to={'/'}> <FaIcons.FaVk size={24} color={'#314755'}/>
-                                </NavLink>
-                                <NavLink to={'/'}> <FaIcons.FaInstagramSquare size={24} color={'#314755'}/>
-                                </NavLink>
-                            </div>
-                            <button className={classes.followBtn}>Follow</button>
-                        </div>
-                    </div>
-                    <div className={classes.profileLanding}>
-
                         <div className={classes.aboutUser}>
-
                             <div className={classes.status}
                                  onDoubleClick={this.isEditShow}> Status: {this.state.isEdit ?
                                 <input onChange={this.setProfileStatus} autoFocus={true} onBlur={this.isEditHide}
                                        value={this.state.profileStatus}/> :
-                                <div onDoubleClick={this.isEditShow}>{this.props.profileStatus}</div>}</div>
-
+                                <div>{this.props.profileStatus}</div>}</div>
                             <h2><FaIcons.FaInfo size={16} color={'#008000'}/>Personal Information
                             </h2>
-                            <div className={classes.aboutMe}>
-                                <strong>About Me:</strong> {this.props.profileData.aboutMe}
-                            </div>
-                            <div className={classes.workStatus}>
-                                <strong>Looking for a
-                                    job:</strong>{this.props.profileData.lookingForAJob ? 'Looking' : 'Not looking'}
-                            </div>
-                            <div className={classes.workFindDescription}>
-                                {this.props.profileData.lookingForAJobDescription}
-                            </div>
+                            {this.state.editProfile ? <ProfileDataForm initialValues={this.props.profileData}
+                                                                       profileData={this.props.profileData}
+                                                                       onSubmit={this.submitProfileForm}/>
+                                : <ProfileData profileData={this.props.profileData}/>}
+                            {this.props.isOwner ?
+                                this.state.editProfile ? <button className={classes.editProfileBtn}
+                                                                 onClick={this.isEditProfileHide}>Cancel</button> :
+                                    <button className={classes.editProfileBtn} onClick={this.isEditProfileShow}>Edit
+                                        Profile</button> : null}
                         </div>
                         <div className={classes.userActivity}>
                             <h2>User activity</h2>
@@ -109,5 +107,6 @@ class Profile extends React.Component {
         )
     }
 }
+
 
 export default Profile;

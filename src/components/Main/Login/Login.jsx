@@ -3,10 +3,11 @@ import classes from './Login.module.css';
 import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import {submitForm} from "../../../redux/reducers/authReducer";
-import {Input} from "../../../common/FormsContols";
+import {Input} from "../../../common/Forms/FormsContols";
 import {MaxLength, required} from "../../../utilities/validators/validators";
 import {Redirect} from "react-router-dom"
 import Preloader from "../../../common/Preloader";
+import {authorizedIdSelector, isAuthorizedSelector} from "../../../redux/selectors/authSelectors";
 
 let MaxLength25 = MaxLength(25);
 let LoginForm = (props) => {
@@ -27,39 +28,46 @@ let LoginForm = (props) => {
                     Me
                 </div>
                 {props.error && <div className={classes.errorField}>{props.error}</div>}
+                {props.captcha &&
+                <div>
+                    <img src={props.captcha} alt="captcha"/>
+                    <Field name={'captcha'} component={Input} validate={[required]}/>
+                </div>
+                }
                 <button className={classes.loginBtn}>Login</button>
             </form>
         </div>
     )
 }
 LoginForm = reduxForm(
-{
-    form: 'login'
-}
+    {
+        form: 'login'
+    }
 )(LoginForm);
 
-const Login = (props) =>
-{
+const Login = (props) => {
     if (props.isAuthorized) {
         if (!props.id) {
             return <Preloader/>
         }
-        return <Redirect to={`/profile/${props.id}`}/>
+        return <Redirect to={`/profile`}/>
     }
 
     let submitForm = (data) => {
-        props.submitForm(data.email, data.password, data.rememberMe);
+        debugger
+        props.submitForm(data.email, data.password, data.rememberMe, data.captcha);
     }
-    return <LoginForm onSubmit={submitForm}/>
+    return <LoginForm onSubmit={submitForm} captcha={props.captchaUrl}/>
 }
 
 let mapStateToProps = (state) => ({
-    isAuthorized: state.auth.isAuthorized,
-    id: state.auth.id
+    isAuthorized: isAuthorizedSelector(state),
+    id: authorizedIdSelector(state),
+    captchaUrl: state.auth.captchaUrl
 });
 
 export default connect(mapStateToProps,
-{
-    submitForm
-}
+    {
+        submitForm,
+    }
 )(Login);
