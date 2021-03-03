@@ -17,12 +17,12 @@ let LoginForm = (props) => {
                 <h1>Hello, <strong>Friend!</strong></h1>
                 <div>
                     <label>Email</label>
-                    <div><Field name={'email'} component={Input} validate={[required, MaxLength25]}/></div>
+                    <div><Field name={'email'} component={Input} validate={[required, MaxLength25]} placeholder={'svc.alexey@gmail.com'}/></div>
                 </div>
                 <div>
                     <label>Password:</label>
                     <div><Field name={"password"} component={Input} type={'password'}
-                                validate={[required, MaxLength25]}/></div>
+                                validate={[required, MaxLength25]} placeholder={'456315'}/></div>
                 </div>
                 <div className={classes.checkbox}><Field name={"rememberMe"} component={'input'} type={"checkbox"}/>Remember
                     Me
@@ -31,7 +31,7 @@ let LoginForm = (props) => {
                 {props.captcha &&
                 <div>
                     <img src={props.captcha} alt="captcha"/>
-                    <Field name={'captcha'} component={Input} validate={[required]}/>
+                    <Field name={'captcha'} component={Input} validate={[required]} />
                 </div>
                 }
                 <button className={classes.loginBtn}>Login</button>
