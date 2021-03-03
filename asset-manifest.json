@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/react-samurai/static/css/main.2c4a4ae3.chunk.css",
+    "main.js": "/react-samurai/static/js/main.97c54e75.chunk.js",
+    "main.js.map": "/react-samurai/static/js/main.97c54e75.chunk.js.map",
+    "runtime-main.js": "/react-samurai/static/js/runtime-main.cff30cb2.js",
+    "runtime-main.js.map": "/react-samurai/static/js/runtime-main.cff30cb2.js.map",
+    "static/js/2.545c6f02.chunk.js": "/react-samurai/static/js/2.545c6f02.chunk.js",
+    "static/js/2.545c6f02.chunk.js.map": "/react-samurai/static/js/2.545c6f02.chunk.js.map",
+    "index.html": "/react-samurai/index.html",
+    "static/css/main.2c4a4ae3.chunk.css.map": "/react-samurai/static/css/main.2c4a4ae3.chunk.css.map",
+    "static/js/2.545c6f02.chunk.js.LICENSE.txt": "/react-samurai/static/js/2.545c6f02.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/react-samurai/static/media/HelveticaNeueCyr-Medium.751c19bd.woff2",
+    "static/media/background.1f2d479b.png": "/react-samurai/static/media/background.1f2d479b.png",
+    "static/media/loader.3fb26d9b.gif": "/react-samurai/static/media/loader.3fb26d9b.gif",
+    "static/media/logo.d6d923e6.svg": "/react-samurai/static/media/logo.d6d923e6.svg",
+    "static/media/photo.33618bb8.jpg": "/react-samurai/static/media/photo.33618bb8.jpg",
+    "static/media/search.c62e15bc.svg": "/react-samurai/static/media/search.c62e15bc.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cff30cb2.js",
+    "static/js/2.545c6f02.chunk.js",
+    "static/css/main.2c4a4ae3.chunk.css",
+    "static/js/main.97c54e75.chunk.js"
+  ]
+}
