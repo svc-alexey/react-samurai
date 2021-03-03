@@ -46,7 +46,6 @@ export const getUserdData = () => async (dispatch) => {
 }
 
 export const submitForm = (email, password, rememberMe, captcha) => async (dispatch) => {
-    debugger
     let data = await authAPI.login(email, password, rememberMe, captcha);
     if (data.resultCode === 0) {
         dispatch(getUserdData());

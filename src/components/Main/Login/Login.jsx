@@ -54,7 +54,6 @@ const Login = (props) => {
     }
 
     let submitForm = (data) => {
-        debugger
         props.submitForm(data.email, data.password, data.rememberMe, data.captcha);
     }
     return <LoginForm onSubmit={submitForm} captcha={props.captchaUrl}/>

@@ -67,6 +67,7 @@ class Profile extends React.Component {
     }
 
     render() {
+        console.log(this.props.profileData)
         return (
             <div className={classes.wrapper}>
                 <div className={classes.container}>
